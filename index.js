@@ -1,11 +1,17 @@
 const express = require('express')
 const app = express()
 const  path = require('path')
-
+const connection = require('./dbconnection')
 app.use(express.static('./public'))
 
-app.get('/', function(req,response){
-   response.sendFile(path.join(__dirname, '/public.index.html'))
+
+
+app.get('/navbar', (req,res) => {
+   res.sendFile(path.join(__dirname, './public/navbar.html'))
+})
+
+app.get('/', function(req,res){
+   res.sendFile(path.join(__dirname, '/public.index.html'))
 })
 
 const port=3000
