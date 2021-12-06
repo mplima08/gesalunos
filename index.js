@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const  path = require('path')
-const connection = require('./dbconnection')
+const connection = require('./dbconnection.js')
 app.use(express.static('./public'))
 
 
@@ -15,6 +15,6 @@ app.get('/', function(req,res){
 })
 
 const port=3000
-app.listen(port, function(){
-   console.log("Listenning on port: ",port)
+app.listen(port, () => {
+   console.log(`Listenning on port ${port}`)
 })
