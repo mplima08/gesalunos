@@ -19,7 +19,7 @@ function getTipos(){
     const tipos = document.getElementById('tipo')
     fetch('http://localhost:3000/formdata')
     .then(res => res.json)
-    .then(data => (data) => {
+    .then(data => {
         for(let i=0; i<data.lenght; i++){
             const op = `<option value"${data[i].idtipo}">${data[i].designacao}</option>`
             tipos.innerHTML += op
