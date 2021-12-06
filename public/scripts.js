@@ -1,3 +1,8 @@
+function init(){
+    getNavbar()
+    getTipos()
+}
+
 function getNavbar(){
     const nbar = document.getElementById('nbar')
     fetch('http://localhost:3000/navbar')
@@ -10,6 +15,15 @@ function getNavbar(){
     })
 }
 
+function getTipos(){
+    fetch('http://localhost:3000/formdata')
+    .then()
+    .then()
+    .catch()
+
+
+
+}
 
 
 
