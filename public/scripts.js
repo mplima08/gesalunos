@@ -1,3 +1,6 @@
+const { header } = require("express/lib/request")
+const { head } = require("../routes/navbarRoutes")
+
 function init(){
     getNavbar()
     getTipos()
@@ -122,4 +125,29 @@ fetch ('http://localhost:3000/utilizador', options)
 })
 
 
+}
+
+function sendimage() {
+    const image = document.getElementById('foto').files[0]
+    let imagedata = new FormData()
+    imagedata.append('image', imagedata)
+    if(image==undefined){
+        alert('Não há imagem selecionada!')
+    }
+    else {
+        let options = {
+            method: 'POST',
+            headers: {
+                'Accept' : 'application/json'
+            },
+            body: imagedata
+        }
+        fetch('http://localhgost:3000/utilizador', options)
+        .then(res => res.json())
+        .then(data => alert(data.message))
+        .catch((err)=>{
+            alert('Ocorreu um erro no pedido')
+        })
+    }
+    
 }
