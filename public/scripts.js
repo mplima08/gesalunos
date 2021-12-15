@@ -6,7 +6,7 @@ function init(){
 
 function getNavbar(){
     const nbar = document.getElementById('nbar')
-    fetch('http://localhost:5000/navbar')
+    fetch('http://localhost:3000/navbar')
     .then(res => res.text())
     .then((html)=>[
         nbar.innerHTML += html
@@ -18,7 +18,7 @@ function getNavbar(){
 
 function getTipos(){
     const tipos = document.getElementById('tipo')
-    fetch('http://localhost:5000/formdata')
+    fetch('http://localhost:3000/formdata')
     .then(res => res.json())
     .then(data => {
         for(let i=0; i<data.length; i++){
@@ -94,7 +94,7 @@ function getData(){
         body: jsonDados
     }
 
-    fetch('http://localhost:5000/utilizador', options)
+    fetch('http://localhost:3000/utilizador', options)
     .then(res => res.json())
     .then(response => alert(response.text))
     .catch((err) => {
@@ -119,7 +119,7 @@ function sendImage(){
             },
             body: fd
         }
-        fetch('http://localhost:5000/foto',options)
+        fetch('http://localhost:3000/foto',options)
         .then(res => res.json())
         .then(data => alert(data.res))
         .catch((err) => {
